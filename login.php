@@ -197,8 +197,7 @@
             <!-- PHP-kode for innlogging -->
             <?php
     include "database.php";
-
-
+              
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['brukernavn']) && isset($_POST['passord'])) {
 
         function validate($data)

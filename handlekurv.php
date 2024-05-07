@@ -210,7 +210,7 @@
 
             // Lag en HTTP-forespørsel (AJAX) for å sende bestillingsdataene til serveren
             const xhr = new XMLHttpRequest();
-            const url = 'processorder.php'; // Endre dette til filen som vil håndtere bestillinger på serveren
+            const url = 'kvittering.php'; // Endre dette til filen som vil håndtere bestillinger på serveren
 
             // Definer dataen som skal sendes til serveren
             const data = {

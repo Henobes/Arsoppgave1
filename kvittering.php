@@ -62,8 +62,7 @@
         text-decoration: none; /* Fjerner understrekning under lenken */
         border-radius: 5px; /* Legger til avrundede hjørner for lenken */
     }
-</style>
-
+    </style>
 </head>
 <body>
     <header>
@@ -77,7 +76,7 @@
     </header>
 
     <div class="kvittering">
-        <!-- melding om bekreftelse av bestilling og knapp til bake till hjemsiden -->
+        <!-- Melding om bekreftelse av bestilling og knapp tilbake til hjemmesiden -->
         <h2>Kvittering</h2>
         <p id="melding">Takk for din bestilling! Du vil motta en bekreftelse på e-post.</p>
         <div class="back-to-home">
@@ -95,39 +94,49 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Legg til bestilling i databasen
+// La oss legge til denne feilsøkingsmeldingen
+echo "Request method: " . $_SERVER["REQUEST_METHOD"];
+
+// Legg til bestilling i databasen hvis det er en POST-forespørsel
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Hent data fra handlekurven (antatt at det er lagret i localStorage)
-    $cartItems = json_decode($_POST['cartItems'], true);
+    // Sjekk om nødvendige data er mottatt
+    if (isset($_POST['cartItems']) && isset($_POST['idKunde'])) {
+        // Hent bestillingsdataene fra POST-forespørselen
+        $cartItems = json_decode($_POST['cartItems'], true);
+        $customerId = $_POST['idKunde'];
+        $date = date('Y-m-d H:i:s'); // Bruk gjeldende dato og tid
 
-    // Sett opp SQL-spørringen for å legge til bestilling
-    $customerId = $_POST['idKunde'];
-    $date = date('Y-m-d H:i:s'); // Bruk gjeldende dato og tid
+        // Loop gjennom elementene i handlekurven og legg til i databasen
+        foreach ($cartItems as $item) {
+            $productId = $item['ProduktID'];
+            $quantity = $item['antall'];
 
-    // Loop gjennom elementene i handlekurven og legg til i databasen
-    foreach ($cartItems as $item) {
-        $productId = $item['ProduktID'];  // Juster dette avhengig av strukturen på handlekurvobjektet
-        $quantity = $item['antall'];  // Juster dette avhengig av strukturen på handlekurvobjektet
+            // Sett opp SQL-spørringen for å legge til bestilling
+            $sql = "INSERT INTO bestilling (ProduktID, idKunde, antall, dato) VALUES ('$productId', '$customerId', '$quantity', '$date')";
 
-        $sql = "INSERT INTO bestilling (idBestilling, ProduktID idKunde, antall, ) VALUES ('$productId', '$customerId', '$quantity', '$date')";
-
-        if ($conn->query($sql) !== TRUE) {
-            // Feil ved lagring av bestilling
-            echo "Feil ved lagring av bestilling: " . $conn->error;
-            break; // Avslutt løkken hvis det oppstår en feil
+            if ($conn->query($sql) !== TRUE) {
+                // Feil ved lagring av bestilling
+                echo "Feil ved lagring av bestilling: " . $conn->error;
+                break; // Avslutt løkken hvis det oppstår en feil
+            }
         }
+
+        // Gi en tilbakemelding til brukeren etter vellykket bestilling
+        echo "Bestillingen ble lagt til i databasen.";
+    } else {
+        // Manglende nødvendige data
+        echo "Feil: Manglende nødvendige data.";
     }
-
-    // Lukk tilkoblingen
-    $conn->close();
-
-    // Gi en tilbakemelding til brukeren etter vellykket bestilling
-    // Dette kan inkluderes i kvitteringsmeldingen eller annen responsmekanisme du foretrekker
-    // echo "Bestillingen ble lagt til vellykket!";
+} else {
+    // Hvis ikke en POST-forespørsel, kan dette skriptet kun håndtere POST-forespørsler
+    echo "Feil: Dette skriptet kan kun håndtere POST-forespørsler.";
 }
+
+// Lukk tilkoblingen
+$conn->close();
 ?>
+
+
 
 </body>
 </html>
-
-

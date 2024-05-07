@@ -82,7 +82,7 @@
             margin-top: 30px;
         }
 
-        /* Stiler for overskriftsnivå 2 (h2) */
+        /* Stiler for overskriftsnivå  (h2) */
         h2 {
             color: #333;
             font-size: 24px;
@@ -190,20 +190,7 @@
     </header>
 
     <!-- Bilde-slider for nyheter -->
-    <div class="slider">
-        <div>
-            <img src="bilder/vision.avif" alt="Nyhetsbilde 1">
-            <div>Nyhetsartikkel 1:.</div>
-        </div>
-        <div>
-            <img src="bilder/ps5.jpg" alt="Nyhetsbilde 2">
-            <div>Nyhetsartikkel 2: .</div>
-        </div>
-        <div>
-            <img src="bilder/nintendo.avif" alt="Nyhetsbilde 2">
-            <div>Nyhetsartikkel 2: .</div>
-        </div>
-    </div>
+    
 
     <!-- Tekst boks om Teknotoppen -->
     <div class="tekst">

@@ -1,0 +1,166 @@
+
+    <div class="container">
+    <!-- Produktene til nettside med bilde og informasjon om produktet -->
+    <div class="product" id="Product1" data-category="hodetelefon">
+        <img src="bilder/hode.jpg" alt="JBL hodetelefon">
+        <div class="product-info">
+            <h2>JBL hodetelefon</h2>
+            <p>Type: hodetelefon</p>
+            <p>Levetid: 48 timer</p>
+            <p>Pris: 300 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart(' JBL hodetelefon', 300, 'Product1')">Legg til handlekurv</button>
+    </div>
+
+    <div class="product" id="Product2" data-category="laptop">
+    <img src="bilder/laptop.jpg" alt="Surface Laptop 5">
+    <div class="product-info">
+        <h2>Surface Laptop 5</h2>
+        <p>Type: Microsoft</p>
+        <p>Levetid: 12 timer</p>
+        <p>Pris: 13 000 kr</p>
+    </div>
+    <button class="add-to-cart-btn" onclick="addToCart('Surface Laptop 5', 13000, 'Product2')">Legg til handlekurv</button>
+</div>
+
+
+    <div class="product" data-category="apple laptop">
+        <img src="bilder/macbook.jpg" alt="Apple MacBook Pro 13">
+        <div class="product-info">
+            <h2>Apple MacBook Pro 13</h2>
+            <p>Type: Apple</p>
+            <p>Størrelse: 256 GB</p>
+            <p>Pris: 19 000 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Apple MacBook Pro 13', 19000)">Legg til handlekurv</button>
+    </div>
+                                             
+    <div class="product" data-category="apple hodetelefon">
+        <img src="bilder/airpod.jpg" alt="Airpods (3gen)">
+        <div class="product-info">
+            <h2>Airpods (3gen)</h2>
+            <p>Type: Apple</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 2000 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Airpods (3gen)', 2000)">Legg til handlekurv</button>
+    </div>
+
+    <div class="product" data-category="gaming hodetelefon">
+        <img src="bilder/logitech.jpg" alt="Logitech Gaming Headsett">
+        <div class="product-info">
+            <h2>Logitech Gaming Headsett</h2>
+            <p>Type: G433</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 1300 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Logitech Gaming Headsett', 1300)">Legg til handlekurv</button>
+    </div>
+
+    <div class="product" data-category="laptop">
+        <img src="bilder/lenovo.jpg" alt="Lenovo Thinkpad E14 Gen 5">
+        <div class="product-info">
+            <h2>Lenovo Thinkpad E14 Gen 5</h2>
+            <p>Type: E14 gen 5</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 6500 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Lenovo Thinkpad E14 Gen 5', 6500)">Legg til handlekurv</button>
+    </div>
+
+    <div class="product" data-category="mobiler Samsung">
+        <img src="bilder/samsung.jpg" alt="Samsung Galaxy S22">
+        <div class="product-info">
+            <h2>Samsung Galaxy S22</h2>
+            <p>Type: Galaxy S22</p>
+            <p>Lagring: 256 GB</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 8400 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Samsung Galaxy S22', 8400)">Legg til handlekurv</button>
+    </div>
+
+    <div class="product" data-category="gaming">
+        <img src="bilder/ps5.jpg" alt="Playstation 5">
+        <div class="product-info">
+            <h2>Playstation 5</h2>
+            <p>Type: Standard edition</p>
+            <p>Lagring: 256 GB</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 6800 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Playstation 5', 6800)">Legg til handlekurv</button>
+    </div>
+   
+    <div class="product" data-category="apple mobiler">
+        <img src="bilder/iphone.avif" alt="Iphone">
+        <div class="product-info">
+            <h2>Iphone</h2>
+            <p>Type: 11 pro</p>
+            <p>Lagring: 256 GB</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 7000 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Iphone 11 pro', 7000)">Legg til handlekurv</button>
+    </div>
+
+    <div class="product" data-category="gaming">
+        <img src="bilder/xbox.avif" alt="Iphone">
+        <div class="product-info">
+            <h2>Xbox</h2>
+            <p>Type: one</p>
+            <p>Lagring: 256 GB</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 6000 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Xbox one', 6000)">Legg til handlekurv</button>
+    </div>
+
+    <div class="product" data-category="gaming">
+        <img src="bilder/pinkps5.avif" alt="Iphone">
+        <div class="product-info">
+            <h2>Playstation 5 kontroller</h2>
+            <p>Type: kontroller </p>
+            <p>Farge: hvit</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 800 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('ps5 kontroller', 800)">Legg til handlekurv</button>
+    </div>
+
+    <div class="product" data-category="mobiler Samsung">
+        <img src="bilder/s23.avif" alt="Iphone">
+        <div class="product-info">
+            <h2>Samsung galaxy s23</h2>
+            <p>Type: Samsung </p>
+            <p>Farge: svart</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 10 000 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Samsung galaxy s23', 10 000)">Legg til handlekurv</button>
+    </div>
+
+    <div class="product" data-category="gaming">
+        <img src="bilder/nintendo.avif" alt="Iphone">
+        <div class="product-info">
+            <h2>Nintendo switch</h2>
+            <p>Type: Nintendo </p>
+            <p>Farge: svart</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 4000 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Nintendo switch', 4000)">Legg til handlekurv</button>
+    </div>
+
+    <div class="product" data-category="apple">
+        <img src="bilder/vision.avif" alt="Iphone">
+        <div class="product-info">
+            <h2>Apple vision pro</h2>
+            <p>Type: Apple </p>
+            <p>Farge: hvit</p>
+            <p>Levetid: 20 timer</p>
+            <p>Pris: 50 000 kr</p>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Apple vision pro', 50000)">Legg til handlekurv</button>
+    </div>
+</div>

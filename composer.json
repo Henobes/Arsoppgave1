@@ -1,0 +1,18 @@
+{
+    "name": "henri/arsoppgave",
+    "description": "Teknotopp",
+    "autoload": {
+        "psr-4": {
+            "Henri\\Arsoppgave\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Henri",
+            "email": "oberoihenri@gmail.com"
+        }
+    ],
+    "require": {
+        "swiftmailer/swiftmailer": "^6.3"
+    }
+}
